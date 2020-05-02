@@ -8,13 +8,12 @@ import java.io.Serializable;
 import java.util.Set;
 
 @Entity
-public class HashtagGroup implements Serializable {
+public class HashtagGroup {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @Id
     private String groupName;
 
     @ManyToMany

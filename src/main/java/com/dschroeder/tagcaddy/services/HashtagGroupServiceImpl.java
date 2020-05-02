@@ -5,32 +5,31 @@ import com.dschroeder.tagcaddy.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class HashtagGroupServiceImpl implements HashtagGroupService {
     @Override
-    public Set<HashtagGroup> findAll() {
+    public List<HashtagGroup> findAll() {
         return null;
     }
 
     @Override
-    public HashtagGroup findById(Long aLong) {
+    public HashtagGroup findById(Long id) {
         return null;
     }
 
     @Override
-    public HashtagGroup save(HashtagGroup object) {
+    public HashtagGroup save(HashtagGroup hashtagGroup) {
         return null;
     }
 
     @Override
-    public void delete(HashtagGroup object) {
+    public void delete(HashtagGroup hashtagGroup) {
 
     }
 
     @Override
-    public void deleteById(Long aLong) {
+    public void deleteById(Long id) {
 
     }
 

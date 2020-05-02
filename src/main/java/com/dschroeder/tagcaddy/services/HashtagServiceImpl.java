@@ -5,12 +5,11 @@ import com.dschroeder.tagcaddy.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class HashtagServiceImpl implements HashtagService{
     @Override
-    public Set<Hashtag> findAll() {
+    public List<Hashtag> findAll() {
         return null;
     }
 

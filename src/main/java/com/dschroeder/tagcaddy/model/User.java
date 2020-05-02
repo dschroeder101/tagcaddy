@@ -1,20 +1,26 @@
 package com.dschroeder.tagcaddy.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Data
+@NoArgsConstructor
+@RequiredArgsConstructor
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    private String firstName;
-    private String lastName;
+    @NonNull
+    private String name;
     private String email;
 
     @OneToMany
@@ -25,4 +31,52 @@ public class User {
 
     @OneToMany
     private List<Hashtag> hashTags;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public List<HashtagCategory> getHashtagCategories() {
+        return hashtagCategories;
+    }
+
+    public void setHashtagCategories(List<HashtagCategory> hashtagCategories) {
+        this.hashtagCategories = hashtagCategories;
+    }
+
+    public List<HashtagGroup> getHashtagGroups() {
+        return hashtagGroups;
+    }
+
+    public void setHashtagGroups(List<HashtagGroup> hashtagGroups) {
+        this.hashtagGroups = hashtagGroups;
+    }
+
+    public List<Hashtag> getHashTags() {
+        return hashTags;
+    }
+
+    public void setHashTags(List<Hashtag> hashTags) {
+        this.hashTags = hashTags;
+    }
 }

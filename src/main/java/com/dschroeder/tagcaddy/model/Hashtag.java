@@ -1,24 +1,22 @@
 package com.dschroeder.tagcaddy.model;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-public class Hashtag implements Serializable {
+public class Hashtag{
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @Id
     private String hashtag;
 
     @ManyToMany
-    private Set<HashtagCategory> categories;
+    private List<HashtagCategory> categories;
 
     @ManyToMany
-    private Set<HashtagGroup> hashtagGroups;
+    private List<HashtagGroup> hashtagGroups;
 
     @ManyToOne
     private User user;
@@ -31,19 +29,35 @@ public class Hashtag implements Serializable {
         this.id = id;
     }
 
-    public Set<HashtagCategory> getCategories() {
+    public List<HashtagCategory> getCategories() {
         return categories;
     }
 
-    public void setCategories(Set<HashtagCategory> categories) {
+    public void setCategories(List<HashtagCategory> categories) {
         this.categories = categories;
     }
 
-    public Set<HashtagGroup> getHashtagGroups() {
+    public List<HashtagGroup> getHashtagGroups() {
         return hashtagGroups;
     }
 
-    public void setHashtagGroups(Set<HashtagGroup> hashtagGroups) {
+    public void setHashtagGroups(List<HashtagGroup> hashtagGroups) {
         this.hashtagGroups = hashtagGroups;
+    }
+
+    public String getHashtag() {
+        return hashtag;
+    }
+
+    public void setHashtag(String hashtag) {
+        this.hashtag = hashtag;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
